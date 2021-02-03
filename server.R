@@ -24,4 +24,8 @@ shinyServer(function(input, output){
     renderText(input$ndayspent)
   )}
     
+  output$department <- {(
+    renderText(input$dept)
+  )}
+  
 })

@@ -9,14 +9,16 @@ shinyUI(
         textInput("projname", "Enter the project name: "),
         textInput("tech", "Technology used: "),
         radioButtons("loc","What is your location?", choices = c("Off-site","On-site"), selected = "On-site", inline = T),
-        sliderInput("ndayspent","Number of days spent", min = 1, max = 200, value = c(11,26), step = 5)
+        sliderInput("ndayspent","Number of days spent", min = 1, max = 200, value = c(11,26), step = 5),
+        selectInput("dept", "What is your department?", choices = c("Finance", "Sales", "IT", "HR"), multiple = T)
       ),
       mainPanel(
         textOutput("project_code"),
         textOutput("project_name"),
         textOutput("technology_used"),
         textOutput("location"),
-        textOutput("no_of_days_spent")
+        textOutput("no_of_days_spent"),
+        textOutput("department")
       )
     )
     
