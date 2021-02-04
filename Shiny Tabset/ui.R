@@ -10,9 +10,10 @@ shinyUI(fluidPage(
     
     mainPanel(
       tabsetPanel(type = "tab",
-                  tabPanel("Data", tableOutput("mtcars")),
+                  tabPanel("Help", tags$img(src = "aplgnome.png"), tags$video(src = "gnomed.mp4", width = "400px", height = "300px", type = "video/mp4", controls = "controls")),
+                  tabPanel("Data", tableOutput("mtcars"), downloadButton("downloadData", "Download Data")),
                   tabPanel("Summary", verbatimTextOutput("summ")),
-                  tabPanel("Plot", plotOutput("plot"))
+                  tabPanel("Plot", plotOutput("plot"), downloadButton("downloadPlot", "Download Plot"))
                   )
     )
     
