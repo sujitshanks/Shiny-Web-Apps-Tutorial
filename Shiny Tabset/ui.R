@@ -5,7 +5,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectInput("ngear", "Select the gear number", c("Cylinders" = "cyl","Transmission" = "am", "Gears" = "gear"))
-      
+      submitButton()
     ),
     
     mainPanel(
