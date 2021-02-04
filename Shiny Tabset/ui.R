@@ -4,8 +4,9 @@ shinyUI(fluidPage(
   headerPanel(title = "Shiny Tabset Example"),
   sidebarLayout(
     sidebarPanel(
-      selectInput("ngear", "Select the gear number", c("Cylinders" = "cyl","Transmission" = "am", "Gears" = "gear"))
-      submitButton()
+      selectInput("ngear", "Select the gear number", c("Cylinders" = "cyl","Transmission" = "am", "Gears" = "gear")),
+      submitButton("Update!")
+      
     ),
     
     mainPanel(
