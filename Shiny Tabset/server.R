@@ -1,16 +1,22 @@
 library(shiny)
 
 shinyServer(function(input, output){
+  
+  mtreact <- reactive({
+    mtcars[,c("mpg", input$ngear)]
+  })
+  
+  
   output$mtcars <- renderTable({
-    mtcars
+    mtreact()
   })
   
   output$summ <- renderPrint({
-    summary(mtcars)
+    summary(mtreact())
   })
   
   output$plot <- renderPlot({
-    with(mtcars, boxplot(mpg~gear))
+    with(mtreact(), boxplot(mpg~mtreact()[,2]))
   })
   
   
